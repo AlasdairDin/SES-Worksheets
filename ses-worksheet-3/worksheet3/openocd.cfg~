@@ -1,0 +1,26 @@
+#deamon config
+telnet_port 4444
+gdb_port 3333
+
+#
+# Olimex ARM-USB-TINY-H
+#
+# http://www.olimex.com/dev/arm-usb-tiny-h.html
+#
+
+interface ft2232
+ft2232_device_desc "Olimex OpenOCD JTAG ARM-USB-TINY-H"
+ft2232_layout olimex-jtag
+ft2232_vid_pid 0x15ba 0x002a
+
+
+#
+# Olimex STM32-P107
+#
+# http://olimex.com/dev/stm32-p107.html
+#
+
+# Work-area size (RAM size) = 64kB for STM32F107VC device
+set WORKAREASIZE 0x10000
+
+source [find target/stm32f1x.cfg]
